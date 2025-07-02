@@ -8,6 +8,7 @@ import ChatWidget from "@/components/ChatWidget";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import VendorDashboard from "./pages/VendorDashboard";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
             <Route path="/vendors" element={<VendorDashboard />} />
+            <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

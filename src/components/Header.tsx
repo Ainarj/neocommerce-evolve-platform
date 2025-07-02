@@ -25,10 +25,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 premium-gradient rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">N</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">NeoCommerce</span>
+            <img 
+              src="/lovable-uploads/2a47f1f3-92e0-4f0d-82ef-380ab7465539.png" 
+              alt="All in One Store Logo" 
+              className="w-8 h-8 object-contain"
+            />
+            <span className="text-xl font-bold text-foreground">All in One Store</span>
           </Link>
 
           {/* Desktop Navigation */}
