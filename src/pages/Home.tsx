@@ -11,8 +11,8 @@ const Home = () => {
     {
       id: "1",
       name: "iPhone 15 Pro Max - 256GB Titanium",
-      price: 1299.99,
-      originalPrice: 1399.99,
+      price: 5200000,
+      originalPrice: 5600000,
       rating: 4.8,
       reviewCount: 2847,
       image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500",
@@ -27,7 +27,7 @@ const Home = () => {
     {
       id: "2",
       name: "Nike Air Jordan 1 Retro High OG",
-      price: 189.99,
+      price: 760000,
       rating: 4.9,
       reviewCount: 1923,
       image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500",
@@ -41,8 +41,8 @@ const Home = () => {
     {
       id: "3",
       name: "MacBook Pro 16\" M3 Max",
-      price: 2899.99,
-      originalPrice: 3199.99,
+      price: 11600000,
+      originalPrice: 12800000,
       rating: 4.7,
       reviewCount: 856,
       image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500",
@@ -57,7 +57,7 @@ const Home = () => {
     {
       id: "4",
       name: "Chanel N°5 Eau de Parfum 100ml",
-      price: 159.99,
+      price: 640000,
       rating: 4.6,
       reviewCount: 634,
       image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",
@@ -74,7 +74,7 @@ const Home = () => {
     {
       icon: <Truck className="w-6 h-6" />,
       title: "Livraison Express",
-      description: "Livraison gratuite en 24-48h partout en France",
+      description: "Livraison gratuite en 24-48h partout à Madagascar",
       gradient: "success-gradient"
     },
     {
@@ -159,7 +159,12 @@ const Home = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="premium" size="lg" className="group">
+            <Button 
+              variant="premium" 
+              size="lg" 
+              className="group"
+              onClick={() => window.location.href = '/products'}
+            >
               Voir tous les produits
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -187,7 +192,11 @@ const Home = () => {
                   placeholder="Votre adresse email..."
                   className="flex-1 bg-secondary/50 border border-white/10 rounded-lg px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <Button variant="premium" size="lg">
+                <Button 
+                  variant="premium" 
+                  size="lg"
+                  onClick={() => console.log("Newsletter subscription")}
+                >
                   S'abonner
                 </Button>
               </div>

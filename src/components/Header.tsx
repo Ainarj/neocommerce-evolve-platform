@@ -64,18 +64,36 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon" className="relative">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="relative hover:bg-accent hover:text-accent-foreground"
+              onClick={() => console.log("Wishlist clicked")}
+              title="Liste de souhaits"
+            >
               <Heart className="w-5 h-5" />
             </Button>
             
-            <Button variant="ghost" size="icon" className="relative">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="relative hover:bg-accent hover:text-accent-foreground"
+              onClick={() => console.log("Cart clicked")}
+              title="Panier"
+            >
               <ShoppingCart className="w-5 h-5" />
               <Badge className="absolute -top-2 -right-2 w-5 h-5 text-xs flex items-center justify-center premium-gradient border-0">
                 3
               </Badge>
             </Button>
             
-            <Button variant="ghost" size="icon">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="hover:bg-accent hover:text-accent-foreground"
+              onClick={() => console.log("Profile clicked")}
+              title="Profil utilisateur"
+            >
               <User className="w-5 h-5" />
             </Button>
 

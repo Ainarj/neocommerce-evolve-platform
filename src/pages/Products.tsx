@@ -9,7 +9,7 @@ const Products = () => {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 2000]);
+  const [priceRange, setPriceRange] = useState([0, 8000000]);
   const [sortBy, setSortBy] = useState("name");
   const [showFilters, setShowFilters] = useState(false);
 
@@ -17,8 +17,8 @@ const Products = () => {
     {
       id: "1",
       name: "iPhone 15 Pro Max - 256GB Titanium",
-      price: 1299.99,
-      originalPrice: 1399.99,
+      price: 5200000,
+      originalPrice: 5600000,
       rating: 4.8,
       reviewCount: 2847,
       image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500",
@@ -30,8 +30,8 @@ const Products = () => {
     {
       id: "2",
       name: "MacBook Pro 16\" M3 Max",
-      price: 2899.99,
-      originalPrice: 3199.99,
+      price: 11600000,
+      originalPrice: 12800000,
       rating: 4.7,
       reviewCount: 856,
       image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500",
@@ -43,7 +43,7 @@ const Products = () => {
     {
       id: "3",
       name: "Nike Air Jordan 1 Retro High OG",
-      price: 189.99,
+      price: 760000,
       rating: 4.9,
       reviewCount: 1923,
       image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500",
@@ -54,8 +54,8 @@ const Products = () => {
     {
       id: "4",
       name: "Sony WH-1000XM5 Casque Sans Fil",
-      price: 349.99,
-      originalPrice: 399.99,
+      price: 1400000,
+      originalPrice: 1600000,
       rating: 4.6,
       reviewCount: 1245,
       image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
@@ -66,7 +66,7 @@ const Products = () => {
     {
       id: "5",
       name: "Chanel N°5 Eau de Parfum 100ml",
-      price: 159.99,
+      price: 640000,
       rating: 4.6,
       reviewCount: 634,
       image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",
@@ -77,8 +77,8 @@ const Products = () => {
     {
       id: "6",
       name: "Canapé Scandinave 3 Places",
-      price: 899.99,
-      originalPrice: 1199.99,
+      price: 3600000,
+      originalPrice: 4800000,
       rating: 4.4,
       reviewCount: 423,
       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500",
@@ -216,20 +216,20 @@ const Products = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Prix (€)
+                      Prix (MGA)
                     </label>
                     <div className="space-y-2">
                       <input
                         type="range"
-                        min="0"
-                        max="3000"
-                        value={priceRange[1]}
-                        onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
+                min="0"
+                max="15000000"
+                value={priceRange[1]}
+                onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
                         className="w-full"
                       />
                       <div className="flex justify-between text-sm text-muted-foreground">
-                        <span>0€</span>
-                        <span>{priceRange[1]}€</span>
+                        <span>0 MGA</span>
+                        <span>{priceRange[1].toLocaleString()} MGA</span>
                       </div>
                     </div>
                   </div>
@@ -305,7 +305,7 @@ const Products = () => {
               <Button variant="premium" onClick={() => {
                 setSearchQuery("");
                 setSelectedCategory("");
-                setPriceRange([0, 2000]);
+                setPriceRange([0, 8000000]);
               }}>
                 Réinitialiser les filtres
               </Button>
@@ -315,7 +315,11 @@ const Products = () => {
 
         {filteredProducts.length > 0 && (
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => console.log("Charger plus de produits")}
+            >
               Charger plus de produits
             </Button>
           </div>

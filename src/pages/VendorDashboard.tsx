@@ -20,7 +20,7 @@ const VendorDashboard = () => {
     },
     {
       title: "Revenus",
-      value: "€24,680",
+      value: "98,720,000 MGA",
       change: "+8% ce mois",
       icon: <DollarSign className="w-6 h-6" />,
       gradient: "premium-gradient"
@@ -42,17 +42,17 @@ const VendorDashboard = () => {
   ];
 
   const recentOrders = [
-    { id: "ORD-001", customer: "Marie Dubois", product: "iPhone 15 Pro", amount: "1299€", status: "Expédié" },
-    { id: "ORD-002", customer: "Jean Martin", product: "MacBook Pro", amount: "2899€", status: "En cours" },
-    { id: "ORD-003", customer: "Sophie Laurent", product: "AirPods Pro", amount: "249€", status: "Livré" },
-    { id: "ORD-004", customer: "Pierre Moreau", product: "iPad Air", amount: "699€", status: "Confirmé" }
+    { id: "ORD-001", customer: "Marie Dubois", product: "iPhone 15 Pro", amount: "5,200,000 MGA", status: "Expédié" },
+    { id: "ORD-002", customer: "Jean Martin", product: "MacBook Pro", amount: "11,600,000 MGA", status: "En cours" },
+    { id: "ORD-003", customer: "Sophie Laurent", product: "AirPods Pro", amount: "1,000,000 MGA", status: "Livré" },
+    { id: "ORD-004", customer: "Pierre Moreau", product: "iPad Air", amount: "2,800,000 MGA", status: "Confirmé" }
   ];
 
   const myProducts = [
     {
       id: "1",
       name: "iPhone 15 Pro Max",
-      price: "1299€",
+      price: "5,200,000 MGA",
       stock: 15,
       views: 2847,
       sales: 156,
@@ -62,7 +62,7 @@ const VendorDashboard = () => {
     {
       id: "2", 
       name: "MacBook Pro M3",
-      price: "2899€",
+      price: "11,600,000 MGA",
       stock: 8,
       views: 1423,
       sales: 89,
@@ -72,7 +72,7 @@ const VendorDashboard = () => {
     {
       id: "3",
       name: "AirPods Pro 2",
-      price: "249€",
+      price: "1,000,000 MGA",
       stock: 0,
       views: 892,
       sales: 234,
@@ -191,11 +191,19 @@ const VendorDashboard = () => {
                     <Plus className="w-6 h-6" />
                     Ajouter un produit
                   </Button>
-                  <Button variant="outline" className="h-20 flex flex-col gap-2">
+                  <Button 
+                    variant="outline" 
+                    className="h-20 flex flex-col gap-2"
+                    onClick={() => console.log("Voir ma boutique")}
+                  >
                     <Eye className="w-6 h-6" />
                     Voir ma boutique
                   </Button>
-                  <Button variant="outline" className="h-20 flex flex-col gap-2">
+                  <Button 
+                    variant="outline" 
+                    className="h-20 flex flex-col gap-2"
+                    onClick={() => setActiveTab("messages")}
+                  >
                     <MessageCircle className="w-6 h-6" />
                     Messages clients
                   </Button>
@@ -292,13 +300,25 @@ const VendorDashboard = () => {
                       </div>
                       
                       <div className="flex gap-2">
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => console.log("Éditer produit", product.id)}
+                        >
                           <Edit className="w-4 h-4" />
                         </Button>
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => console.log("Voir produit", product.id)}
+                        >
                           <Eye className="w-4 h-4" />
                         </Button>
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => console.log("Supprimer produit", product.id)}
+                        >
                           <Trash2 className="w-4 h-4" />
                         </Button>
                       </div>
@@ -365,9 +385,9 @@ const VendorDashboard = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Prix (€)
+                      Prix (MGA)
                     </label>
-                    <Input type="number" placeholder="0.00" />
+                    <Input type="number" placeholder="0" />
                   </div>
                 </div>
                 
